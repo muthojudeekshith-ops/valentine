@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Valentine 💗</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Valentine Day 💗</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<!-- INTERFACE 1 -->
-<div id="screen1" class="screen active">
-  <canvas id="pinkboard"></canvas>
-  <button id="nextBtn">Next 💗</button>
-</div>
-
-<!-- INTERFACE 2 -->
-<div id="screen2" class="screen">
-  <div class="security-box">
-    <h2>Password 💗</h2>
-    <input type="password" id="password" placeholder="Enter password">
+  <!-- INTERFACE 1 -->
+  <div id="screen1" class="screen active">
+    <canvas id="pinkboard"></canvas>
+    <button id="nextBtn" class="next-btn">NEXT</button>
   </div>
 
-  <div class="confirm-heart" onclick="checkPassword()">
-    <span>Confirm</span>
-  </div>
-</div>
+  <!-- INTERFACE 2 -->
+  <div id="screen2" class="screen">
+    <div class="security-box">
+      <h2>Enter Password</h2>
+      <input type="password" id="password" placeholder="Password" />
+    </div>
 
-<!-- INTERFACE 3 -->
-<div id="screen3" class="screen">
-  <div class="paper">
-    <div class="pop-heart"></div>
+    <div class="confirm-heart" id="confirmBtn">
+      <span>CONFIRM</span>
+    </div>
   </div>
-  <div id="typingText"></div>
-</div>
 
-<script src="script.js"></script>
+  <!-- INTERFACE 3 -->
+  <div id="screen3" class="screen">
+    <div class="paper">
+      <div id="typedText"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
