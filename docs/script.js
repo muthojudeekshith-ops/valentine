@@ -32,7 +32,7 @@ Really, you are the best part of my life that ever happened.
 
 I hope our love never ends and I promise you that I'll never let it end.
 
-Bngrm, you are my best friend, my other half & you are my everything.
+Bngrm, you are my best friend, my half & you are my everything.
 
 HAPPY VALENTINE'S DAY MY GIRL [HANSINI] 🌹🌹
 I LOVE YOU 💗💗💗
