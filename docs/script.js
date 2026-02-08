@@ -1,4 +1,4 @@
-/* ---------------- INTERFACE LOGIC ---------------- */
+ /* ---------------- INTERFACE LOGIC ---------------- */
 
 const screen1 = document.getElementById("screen1");
 const screen2 = document.getElementById("screen2");
