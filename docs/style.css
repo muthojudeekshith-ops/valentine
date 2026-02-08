@@ -142,3 +142,81 @@ canvas{
   line-height:1.7;
   white-space:pre-wrap;
 }
+/* =========================
+   INTERFACE 2 – CONFIRM HEART
+   ========================= */
+
+.confirm-heart {
+  width: 120px;
+  height: 110px;
+  background: #ff2f92;
+  position: relative;
+  transform: rotate(-45deg);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.confirm-heart::before,
+.confirm-heart::after {
+  content: "";
+  width: 120px;
+  height: 110px;
+  background: #ff2f92;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.confirm-heart::before {
+  top: -60px;
+  left: 0;
+}
+
+.confirm-heart::after {
+  left: 60px;
+  top: 0;
+}
+
+.confirm-heart span {
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+/* =========================
+   INTERFACE 3 – PAPER
+   ========================= */
+
+.paper {
+  background: #fff;
+  padding: 40px 30px;
+  width: 80%;
+  max-width: 600px;
+
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(255,0,128,0.3);
+
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+
+  animation: popUp 0.8s ease forwards;
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.6) translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
