@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Valentine Day 💗</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Heart Animation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- GLOBAL HEART BACKGROUND -->
+  <canvas id="pinkboard"></canvas>
+
   <!-- INTERFACE 1 -->
   <div id="screen1" class="screen active">
-    <canvas id="pinkboard"></canvas>
-    <button id="nextBtn" class="next-btn">NEXT</button>
+    <button id="nextBtn">NEXT</button>
   </div>
 
   <!-- INTERFACE 2 -->
   <div id="screen2" class="screen">
-    <div class="security-box">
-      <h2>Enter Password</h2>
-      <input type="password" id="password" placeholder="Password" />
-    </div>
-
-    <div class="confirm-heart" id="confirmBtn">
-      <span>CONFIRM</span>
-    </div>
+    <p>Type the password</p>
+    <input type="text" id="password" placeholder="Password">
+    <button id="confirmBtn">CONFIRM</button>
   </div>
 
   <!-- INTERFACE 3 -->
   <div id="screen3" class="screen">
     <div class="paper">
-      <div id="typedText"></div>
+      <p id="typingText"></p>
     </div>
   </div>
 
