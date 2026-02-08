@@ -20,6 +20,9 @@ html, body {
   align-items: center;
   flex-direction: column;
 }
+#screen1 {
+  overflow: hidden;
+}
 
 .screen.active {
   display: flex;
@@ -28,9 +31,13 @@ html, body {
 /* CANVAS */
 canvas {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
+
 
 /* NEXT BUTTON */
 .next-btn {
@@ -45,6 +52,7 @@ canvas {
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.5s;
+    z-index: 5;
 }
 
 /* INTERFACE 2 */
