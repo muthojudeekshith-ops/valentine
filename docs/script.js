@@ -34,10 +34,10 @@ I hope our love never ends and I promise you that I'll never let it end.
 
 Bngrm, you are my best friend, my other half & you are my everything.
 
-HAPPY VALENTINE'S DAY MY GIRL 🌹🌹
+HAPPY VALENTINE'S DAY MY GIRL [HANSINI] 🌹🌹
 I LOVE YOU 💗💗💗
 
-Your forever valentine ❤️`;
+Your forever valentine[DEEKSHITH] ❤️`;
 
 let charIndex = 0;
 function typeMessage() {
