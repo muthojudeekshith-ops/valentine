@@ -1,88 +1,122 @@
-/* ---------- SCREEN LOGIC ---------- */
-const s1 = document.getElementById("screen1");
-const s2 = document.getElementById("screen2");
-const s3 = document.getElementById("screen3");
+// Navigation
+const s1 = document.getElementById('screen1');
+const s2 = document.getElementById('screen2');
+const s3 = document.getElementById('screen3');
 
-document.getElementById("nextBtn").onclick = () => {
-  s1.classList.remove("active");
-  s2.classList.add("active");
+document.getElementById('next1').onclick = () => {
+    s1.classList.remove('active');
+    s2.classList.add('active');
 };
 
-document.getElementById("confirmBtn").onclick = () => {
-  const pass = document.getElementById("password").value;
-  if (pass === "SHAWARMA") {
-    s2.classList.remove("active");
-    s3.classList.add("active");
-    typeText();
-  } else {
-    alert("Wrong password");
-  }
+document.getElementById('checkPass').onclick = () => {
+    const pass = document.getElementById('password').value.toUpperCase();
+    if (pass === 'SHAWARMA') {
+        s2.classList.remove('active');
+        s3.classList.add('active');
+        startAnimation();
+        typeMessage();
+    } else {
+        document.getElementById('errorMsg').innerText = 'Wrong password! Hint: A delicious wrap...';
+        setTimeout(() => {
+            document.getElementById('errorMsg').innerText = '';
+        }, 3000);
+    }
 };
 
-/* ---------- TYPING EFFECT ---------- */
-const msg = " Hey Bae,  
-Every day with you feels like a win, and i want this kind of win to the rest of my life . . . .  . 
-Really,  You are the best part of my life that ever happend . . . . . 
-I hope our love never end and i promise you that I'll never let it end . . . . .  
-Bngrm, you are my best friend , you my half & you are my everything . . . . .                                         
-HAPPY VALENTINE DAY MY GIRL 🌹🌹                      
-I LOVE YOU 💗💗💗   
-                                                                     your forever valentine❤️";
-let i = 0;
+// Typing Effect
+const message = `Hey Bae,
 
-function typeText() {
-  if (i < msg.length) {
-    document.getElementById("typingText").innerHTML += msg.charAt(i);
-    i++;
-    setTimeout(typeText, 80);
-  }
+Every day with you feels like a win, and I want this kind of win for the rest of my life...
+
+Really, you are the best part of my life that ever happened.
+
+I hope our love never ends and I promise you that I'll never let it end.
+
+Bngrm, you are my best friend, my other half & you are my everything.
+
+HAPPY VALENTINE'S DAY MY GIRL 🌹🌹
+I LOVE YOU 💗💗💗
+
+Your forever valentine ❤️`;
+
+let charIndex = 0;
+function typeMessage() {
+    if (charIndex < message.length) {
+        document.getElementById('typingText').textContent += message.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeMessage, 50);
+    }
 }
 
-/* ---------- HEART ANIMATION ---------- */
-const canvas = document.getElementById("pinkboard");
-const ctx = canvas.getContext("2d");
-
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+// Heart Particles Animation
+function startAnimation() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    let width, height;
+    const particles = [];
+    
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+    
+    window.addEventListener('resize', resize);
+    resize();
+    
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+        
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.size = Math.random() * 15 + 5;
+            this.speed = Math.random() * 2 + 1;
+            this.opacity = Math.random() * 0.5 + 0.3;
+            this.swing = Math.random() * 2;
+            this.swingSpeed = Math.random() * 0.05;
+            this.time = Math.random() * 100;
+        }
+        
+        update() {
+            this.y -= this.speed;
+            this.time += this.swingSpeed;
+            this.x += Math.sin(this.time) * this.swing;
+            
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+        
+        draw() {
+            ctx.fillStyle = `rgba(255, 77, 109, ${this.opacity})`;
+            ctx.beginPath();
+            const x = this.x;
+            const y = this.y;
+            const s = this.size;
+            
+            // Simple heart shape
+            ctx.moveTo(x, y);
+            ctx.bezierCurveTo(x - s/2, y - s/2, x - s, y + s/3, x, y + s);
+            ctx.bezierCurveTo(x + s, y + s/3, x + s/2, y - s/2, x, y);
+            ctx.fill();
+        }
+    }
+    
+    for (let i = 0; i < 50; i++) {
+        particles.push(new Particle());
+    }
+    
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
 }
-resize();
-window.addEventListener("resize", resize);
-
-const hearts = [];
-
-function Heart() {
-  this.x = Math.random() * canvas.width;
-  this.y = canvas.height + Math.random() * 100;
-  this.size = Math.random() * 2 + 1;
-  this.speed = Math.random() * 1 + 0.5;
-}
-
-function drawHeart(x, y, size) {
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.scale(size, size);
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.bezierCurveTo(-2, -2, -4, 1, 0, 4);
-  ctx.bezierCurveTo(4, 1, 2, -2, 0, 0);
-  ctx.fillStyle = "pink";
-  ctx.fill();
-  ctx.restore();
-}
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  if (hearts.length < 100) hearts.push(new Heart());
-
-  hearts.forEach((h, index) => {
-    h.y -= h.speed;
-    drawHeart(h.x, h.y, h.size);
-    if (h.y < -10) hearts.splice(index, 1);
-  });
-
-  requestAnimationFrame(animate);
-}
-
-animate();

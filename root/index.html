@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Heart Animation</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Someone Special</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="container">
+        <!-- Screen 1: The Intro -->
+        <div id="screen1" class="screen active">
+            <h1 class="fade-in">Hi there...</h1>
+            <p class="fade-in-delayed">I have something to tell you.</p>
+            <button id="next1" class="btn">What is it?</button>
+        </div>
 
-  <!-- GLOBAL HEART BACKGROUND -->
-  <canvas id="pinkboard"></canvas>
+        <!-- Screen 2: The Question -->
+        <div id="screen2" class="screen">
+            <h1>But first, a quick security check.</h1>
+            <p>What's the magic word?</p>
+            <input type="text" id="password" placeholder="Enter password..." autocomplete="off">
+            <button id="checkPass" class="btn">Unlock</button>
+            <p id="errorMsg" class="error"></p>
+        </div>
 
-  <!-- INTERFACE 1 -->
-  <div id="screen1" class="screen active">
-    <button id="nextBtn">NEXT</button>
-  </div>
-
-  <!-- INTERFACE 2 -->
-  <div id="screen2" class="screen">
-    <p>Type the password</p>
-    <input type="text" id="password" placeholder="Password">
-    <button id="confirmBtn">CONFIRM</button>
-  </div>
-
-  <!-- INTERFACE 3 -->
-  <div id="screen3" class="screen">
-    <div class="paper">
-      <p id="typingText"></p>
+        <!-- Screen 3: The Message -->
+        <div id="screen3" class="screen">
+            <canvas id="canvas"></canvas>
+            <div class="message-container">
+                <div class="paper">
+                    <p id="typingText"></p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
