@@ -29,9 +29,7 @@ Bngrm, you are my best friend , you my half & you are my everything . . . . .
 HAPPY VALENTINE DAY MY GIRL 🌹🌹  
 I LOVE YOU 💗💗💗  
 
-yours forever valentine❤️`;
-
-let i = 0;
+yours forever valentine❤️`;let i = 0;
 
 function typeText() {
   if (i < msg.length) {
