@@ -7,8 +7,10 @@ const nextBtn = document.getElementById("nextBtn");
 const confirmBtn = document.getElementById("confirmBtn");
 
 setTimeout(() => {
+  startHeart();        // 🔥 HEART STARTS HERE
   nextBtn.style.opacity = "1";
-}, 5000);
+}, 500);
+
 
 nextBtn.onclick = () => {
   screen1.classList.remove("active");
