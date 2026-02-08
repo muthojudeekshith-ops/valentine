@@ -68,3 +68,13 @@ let settings = {
 })();
 
 /* FULL HEART ANIMATION CODE CONTINUES EXACTLY AS YOU GAVE */
+// ===== FORCE CANVAS SIZE FIX =====
+const canvasFix = document.getElementById("pinkboard");
+function fixCanvasSize() {
+  if (!canvasFix) return;
+  canvasFix.width = window.innerWidth;
+  canvasFix.height = window.innerHeight;
+}
+window.addEventListener("resize", fixCanvasSize);
+fixCanvasSize();
+
