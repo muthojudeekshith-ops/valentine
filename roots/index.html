@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- INTERFACE 1 -->
+<div id="screen1" class="screen active">
+  <canvas id="pinkboard"></canvas>
+  <button id="nextBtn">Next 💗</button>
+</div>
+
+<!-- INTERFACE 2 -->
+<div id="screen2" class="screen">
+  <div class="security-box">
+    <h2>Password 💗</h2>
+    <input type="password" id="password" placeholder="Enter password">
+  </div>
+
+  <div class="confirm-heart" onclick="checkPassword()">
+    <span>Confirm</span>
+  </div>
+</div>
+
+<!-- INTERFACE 3 -->
+<div id="screen3" class="screen">
+  <div class="paper">
+    <div class="pop-heart"></div>
+  </div>
+  <div id="typingText"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
