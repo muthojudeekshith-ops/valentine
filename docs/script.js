@@ -184,3 +184,30 @@ pool.update(dt);
 pool.draw(ctx,img);
 })();
 })(document.getElementById("pinkboard"));
+
+const text = `Hey Bae,
+
+Every day with you feels like a win, and i want this kind of win to the rest of my life . . . .
+
+Really,  You are the best part of my life that ever happend . . . .
+
+I hope our love never end and i promise you that I'll never let it end . . . .
+
+Bngrm, you are my best friend , you my half & you are my everything . . . .
+
+HAPPY VALENTINE DAY MY GIRL 🌹🌹
+I LOVE YOU 💗💗💗`;
+
+let i = 0;
+const speed = 40;
+const target = document.getElementById("typedText");
+
+function typeEffect() {
+  if (i < text.length) {
+    target.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+    i++;
+    setTimeout(typeEffect, speed);
+  }
+}
+typeEffect();
+
