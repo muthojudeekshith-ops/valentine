@@ -16,7 +16,7 @@ document.getElementById('checkPass').onclick = () => {
         startAnimation();
         typeMessage();
     } else {
-        document.getElementById('errorMsg').innerText = 'Wrong password! Hint: A delicious wrap...';
+        document.getElementById('errorMsg').innerText = 'Wrong Answer! Hint:IT IS A ROLL ...';
         setTimeout(() => {
             document.getElementById('errorMsg').innerText = '';
         }, 3000);
@@ -26,7 +26,7 @@ document.getElementById('checkPass').onclick = () => {
 // Typing Effect
 const message = `Hey Bae,
 
-Every day with you feels like a win, and I want this kind of win for the rest of my life...
+Every day with you feels like a win & I want this kind of win for the rest of my life...
 
 Really, you are the best part of my life that ever happened.
 
