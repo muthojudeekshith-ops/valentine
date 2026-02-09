@@ -44,7 +44,7 @@ function typeMessage() {
     if (charIndex < message.length) {
         document.getElementById('typingText').textContent += message.charAt(charIndex);
         charIndex++;
-        setTimeout(typeMessage, 20);
+        setTimeout(typeMessage, 15);
     }
 }
 
