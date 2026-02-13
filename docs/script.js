@@ -10,7 +10,7 @@ document.getElementById('next1').onclick = () => {
 
 document.getElementById('checkPass').onclick = () => {
     const pass = document.getElementById('password').value.toUpperCase();
-    if (pass === 'Noo') {
+    if (pass === 'SHAWARMA') {
         s2.classList.remove('active');
         s3.classList.add('active');
         startAnimation();
